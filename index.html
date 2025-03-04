@@ -188,23 +188,39 @@
             <!-- Main Content Area -->
             <div class="flex-1">
                 <!-- Breadcrumb -->
-                <div class="flex items-center gap-2 text-sm mb-4 justify-between">
-                    <div>
+                <div class="flex flex-col md:flex-row gap-4 text-sm mb-4 justify-between">
+                    <!-- Breadcrumb -->
+                    <div class="flex items-center gap-2">
                         <a href="#" class="hover:text-[#0099FF]">Startseite</a>
                         <span>/</span>
                         <span>Ambientebeleuchtung</span>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <span class="text-sm">Anzahl der Produkte: <span class="font-medium">9 / 24 / 36</span></span>
-                        <div class="flex gap-2">
-                            <button class="text-[#0099FF]"><i class="fas fa-th-large"></i></button>
-                            <button class="text-gray-400"><i class="fas fa-th"></i></button>
+                    
+                    <!-- Controls -->
+                    <div class="flex flex-wrap items-center gap-4">
+                        <!-- Product Count -->
+                        <div class="flex items-center gap-2">
+                            <span class="whitespace-nowrap">Anzahl der Produkte:</span>
+                            <div class="font-medium space-x-1">
+                                <button class="hover:text-[#0099FF]">9</button>
+                                <span>/</span>
+                                <button class="hover:text-[#0099FF]">24</button>
+                                <span>/</span>
+                                <button class="hover:text-[#0099FF]">36</button>
+                            </div>
                         </div>
-                        <select class="text-sm border rounded px-2 py-1">
+                        
+                        <!-- View Toggle -->
+                        <div class="flex gap-2">
+                            <button class="text-[#0099FF] hover:opacity-80"><i class="fas fa-th-large"></i></button>
+                            <button class="text-gray-400 hover:text-[#0099FF]"><i class="fas fa-th"></i></button>
+                        </div>
+                        
+                        <!-- Sort Dropdown -->
+                        <select class="text-sm border rounded px-2 py-1 focus:outline-none focus:border-[#0099FF]">
                             <option>Standardsortierung</option>
                         </select>
                     </div>
-
                 </div>
 
                 <!-- Product Grid Header -->
