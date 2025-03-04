@@ -7,7 +7,16 @@
       "oldPrice": 1299.00,
       "rating": 5,
       "image": "assets/images/product1.jpeg",
-      "sale": true
+      "sale": true,
+      "description": "Professionelle Nachrüstung der Ambientebeleuchtung mit Servicepartner-Steuerung für Audi A4 B9 RS B9",
+      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
+      "tags": ["audi", "a4", "b9", "rs", "ambientebeleuchtung", "nachrüstung"],
+      "gallery": [
+        "assets/images/product1.jpeg",
+        "assets/images/product2.jpg",
+        "assets/images/product3.jpeg",
+        "assets/images/product4.jpg"
+      ]
     },
     { 
       "id": 2,
