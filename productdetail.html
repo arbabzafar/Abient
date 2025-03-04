@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productdetail</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="w-full bg-[#0099FF] text-white px-4 py-2">
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex justify-end">
+            <button id="mobile-menu-button" class="text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Desktop and Mobile Content -->
+        <div id="menu-content" class="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
+            <!-- Left Side Contact Info -->
+            <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                <div class="flex items-center">
+                    <span class="mr-2 text-sm">Tel/WhatsApp:</span>
+                    <a href="tel:+491625276361" class="hover:text-gray-200 text-sm break-all">+49 162 527 63 61</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="mr-2 text-sm">Mail:</span>
+                    <a href="mailto:info@carnex.de" class="hover:text-gray-200 text-sm break-all">info@carnex.de</a>
+                </div>
+            </div>
+
+            <!-- Right Side Social Media and Links -->
+            <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
+                <!-- Social Media Icons -->
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-gray-200"><i class="fab fa-tiktok"></i></a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hover:text-gray-200 text-sm">KONTAKT</a>
+                    <a href="#" class="hover:text-gray-200 text-sm">FAQS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-[#1C1C1C] pt-4">
+        <!-- Logo and Search Section -->
+        <div class="px-4 md:px-8 flex flex-col md:flex-row items-center gap-4">
+            <!-- Logo -->
+            <div class="w-44 md:w-44 mb-4 md:mb-0">
+                <a href="/">
+                    <img src="assets/images/logo.webp" alt="CARHEX" class="w-full">
+                </a>
+            </div>
+
+            <!-- Search Bar and Category Dropdown -->
+            <div class="flex-1 w-full md:max-w-xl">
+                <div class="flex h-[42px]">
+                    <input 
+                        type="text" 
+                        placeholder="Suche nach Produkten" 
+                        class="w-full px-4 py-2 bg-white rounded-l focus:outline-none text-sm"
+                    >
+                    <select class="w-32 md:w-48 px-2 md:px-4 py-2 bg-white border-l border-gray-200 focus:outline-none text-gray-700 text-sm">
+                        <option>KATEGORIE AUS...</option>
+                    </select>
+                    <button class="bg-[#0099FF] px-4 md:px-6 rounded-r hover:bg-[#0088ee] transition-colors">
+                        <i class="fas fa-search text-white"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center justify-between w-full md:w-auto md:gap-8 mt-4 md:mt-0">
+                <!-- Login/Register -->
+                <a href="#" class="flex items-center text-white gap-2 hover:text-[#0099FF] transition-colors">
+                    <i class="far fa-user text-xl md:text-2xl"></i>
+                    <span class="text-xs md:text-sm whitespace-nowrap">LOGIN / REGISTRIEREN</span>
+                </a>
+                
+                <!-- Wishlist -->
+                <a href="#" class="relative text-white hover:text-[#0099FF] transition-colors">
+                    <i class="far fa-heart text-xl md:text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-[#0099FF] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+                
+                <!-- Cart -->
+                <a href="#" class="flex items-center text-white gap-2 hover:text-[#0099FF] transition-colors">
+                    <div class="relative">
+                        <i class="fas fa-shopping-cart text-xl md:text-2xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-[#0099FF] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </div>
+                    <span class="text-xs md:text-sm whitespace-nowrap">0,00 €</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="bg-[#414141] mt-4 border-t border-gray-700">
+            <!-- Mobile Menu Button -->
+            <div class="px-4 md:hidden py-2 border-b border-gray-700">
+                <button class="flex items-center text-white gap-2" id="mobile-nav-button">
+                    <i class="fas fa-bars"></i>
+                    <span>Menü</span>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:block px-4 md:px-8" id="nav-content">
+                <ul class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">HOME</a>
+                    </li>
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">SHOP</a>
+                    </li>
+                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                            <span>AMBIENTEBELEUCHTUNG</span>
+                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                        </a>
+                    </li>
+                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                            <span>MULTIMEDIA</span>
+                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                        </a>
+                    </li>
+                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                            <span>DASHCAM</span>
+                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                        </a>
+                    </li>
+                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                            <span>STERNENHIMMEL</span>
+                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                        </a>
+                    </li>
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">CODIERUNGEN</a>
+                    </li>
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">NACHRÜSTUNGEN</a>
+                    </li>
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">SCHLÜSSEL</a>
+                    </li>
+                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
+                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">BLOG</a>
+                    </li>
+                    <li class="border-b md:border-b-0 border-gray-700">
+                        <a href="#" class="text-white px-4 py-3 block md:inline-block bg-[#FFC107] hover:bg-[#FFD147] text-sm font-medium transition-colors">GUTSCHEINE</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Detail Section -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm mb-8">
+            <a href="#" class="hover:text-[#0099FF]">Startseite</a>
+            <span>/</span>
+            <a href="#" class="hover:text-[#0099FF]">Ambientebeleuchtung</a>
+            <span>/</span>
+            <span>Ambientebeleuchtung für Audi A3 S3 RS3 8Y inkl. Einbau (Nachrüstung)</span>
+        </div>
+
+        <!-- Product Content -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left Column - Images -->
+            <div class="lg:w-1/2">
+                <!-- Main Image -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                    <div class="relative">
+                        <img src="assets/images/product1.jpeg" alt="Product" class="w-full h-auto">
+                        <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
+                            SALE
+                        </span>
+                    </div>
+                </div>
+                <!-- Thumbnail Images -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow">
+                        <img src="assets/images/product1.jpeg" alt="Thumbnail 1" class="w-full h-auto">
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow">
+                        <img src="assets/images/product1.jpeg" alt="Thumbnail 2" class="w-full h-auto">
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow">
+                        <img src="assets/images/product1.jpeg" alt="Thumbnail 3" class="w-full h-auto">
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow">
+                        <img src="assets/images/product1.jpeg" alt="Thumbnail 4" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Product Info -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h1 class="text-xl font-medium mb-2">Ambientebeleuchtung für Audi A3 S3 RS3 8Y inkl. Einbau (Nachrüstung)</h1>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center mb-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm"></i>
+                        </div>
+                        <a href="#" class="text-xs text-[#0099FF] ml-1 underline">(2 Kundenbewertungen)</a>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-4">
+                        <span class="text-[#0099FF] text-2xl font-bold">1.649,00 €</span>
+                        <p class="text-xs text-gray-500">inkl. MwSt.</p>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-6">
+                        <p class="text-sm text-gray-600">
+                            Professionelle Nachrüstung der Ambientebeleuchtung mit Servicepartner-Steuerung BMW: In dieser Audi A3 8Y RS3 8Y (2)
+                        </p>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-sm mb-1">Wähle deine Option *</label>
+                            <select class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white">
+                                <option>Wähle eine Option</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-1">Persönliche Nachricht für Kundenbetreuung *</label>
+                            <select class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white">
+                                <option>Wähle eine Option</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Product Summary -->
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Produkt Gesamtpreis</span>
+                            <span class="text-[#0099FF]">1.049,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>Optionen Gesamtpreis</span>
+                            <span class="text-[#0099FF]">0,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Gesamtpreis</span>
+                            <span class="text-[#0099FF]">1.049,00 €</span>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <div class="mb-4">
+                        <button class="w-full bg-[#0099FF] text-white py-2 px-4 rounded text-sm font-medium hover:bg-[#0088ee] transition-colors uppercase">
+                            In den Warenkorb
+                        </button>
+                    </div>
+
+                    <!-- PayPal Section -->
+                    <div class="mb-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <span>Bezahlen Sie in bis zu 24 monatlichen Raten mit</span>
+                            <img src="assets/images/paypal.svg" alt="PayPal" class="h-4">
+                            <a href="#" class="text-[#0099FF] underline">Mehr erfahren</a>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <div class="mb-6">
+                        <a href="#" class="inline-flex items-center text-sm text-gray-600 hover:text-[#0099FF] font-bold">
+                            <i class="far fa-heart mr-2"></i>
+                            Zur Wunschliste hinzufügen
+                        </a>
+                    </div>
+
+                    <!-- Categories and Tags -->
+                    <div class="space-y-2">
+                        <div class="text-sm text-gray-600">
+                            <span class="font-bold">Kategorien: </span>
+                            <a href="#" class="text-[#000000] hover:underline">Alle Kategorien</a>,
+                            <a href="#" class="text-[#000000] hover:underline">Ambientebeleuchtung</a>
+                        </div>
+                        <div class="text-sm text-gray-600 ">
+                            <span class="font-bold">Schlagwörter: </span>
+                            <a href="#" class="text-[#00000] hover:underline">8y</a>,
+                            <a href="#" class="text-[#00000] hover:underline">a3</a>,
+                            <a href="#" class="text-[#00000] hover:underline">ambientebeleuchtung</a>,
+                            <a href="#" class="text-[#000000] hover:underline">audi</a>,
+                            <a href="#" class="text-[#000000] hover:underline">mmi</a>,
+                            <a href="#" class="text-[#000000] hover:underline">nachrüsten</a>,
+                            <a href="#" class="text-[#000000] hover:underline">nachrüstung</a>,
+                            <a href="#" class="text-[#000000] hover:underline">rs3</a>,
+                            <a href="#" class="text-[#000000] hover:underline">s3</a>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <span>Share: </span>
+                            <a href="#" class="text-[#000000] hover:underline">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-[#000000] hover:underline ml-2">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="mt-8">
+            <!-- Tab Headers -->
+            <div class="border-b border-gray-200">
+                <nav class="flex space-x-8 justify-center" aria-label="Tabs">
+                    <button class="border-b-2 border-[#0099FF] py-4 px-1 text-sm font-medium text-[#0099FF]">
+                        BESCHREIBUNG
+                    </button>
+                    <button class="border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        ZUSÄTZLICHE INFORMATIONEN
+                    </button>
+                    <button class="border-b-2 border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        BEWERTUNGEN (2)
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="py-6">
+                <!-- Description Tab Content -->
+                <div>
+                    <h2 class="text-xl font-medium mb-4">Ambientebeleuchtung in deinem Audi A3 S3 RS3 (8Y)</h2>
+                    
+                    <p class="text-sm mb-6">
+                        Du möchtest die <span class="text-[#0099FF]">mehrfarbige Ambientebeleuchtung</span> in deinem Auto nachrüsten? CarHex ermöglicht dir die vollständige Nachrüstung der Sonderausstattung "Ambientebeleuchtung Lichtpaket PLUS" in deinem Audi A3 S3 RS3 (8Y). Dabei hast du die freie Wahl, neben dem Grundpaket, weitere optionale Spots der Ambientebeleuchtung auszusuchen. Die Ambientebeleuchtung wird auf dein Fahrzeug programmiert. Demzufolge kannst du die Farben & Helligkeit über deinen Bordcomputer (MMI) steuern. Überdies wird auch die Multi-Zonen Ambientebeleuchtung codiert. Dadurch können verschiedene Farben der jeweiligen Zonen (Flächenbeleuchtung & Linienbeleuchtung) über das Audi MMI gesteuert werden.
+                    </p>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-t-2 border-b-2 border-[#0D99EA] py-8">
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-lightbulb text-[#0099FF] text-4xl"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">30 Farben</h3>
+                            <p class="text-sm text-black">Dir stehen 30 Farben für die Flächen- & Linienbeleuchtung zur Auswahl</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-microchip text-[#0099FF] text-4xl"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">LED-Glasfaser</h3>
+                            <p class="text-sm text-black">Helle & gleichmäßige Lichtstärke durch Verwendung von LED-Glasfaser</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-cog text-[#0099FF] text-4xl"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">MMI-Steuerung</h3>
+                            <p class="text-sm text-black">Nach Programmierung steuerst du die Ambientebeleuchtung über das MMI-Display</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i class="fas fa-sliders-h text-[#0099FF] text-4xl"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">Dynamic-Mode</h3>
+                            <p class="text-sm text-black">Farbverläufe & dynamische Lichteffekte durch addressierte LEDs</p>
+                        </div>
+                    </div>
+
+                    <!-- Base Package Content -->
+                    <h3 class="text-lg font-medium mb-4 text-black font-bold">Grundpaket-Inhalt</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Türkontur-Beleuchtung (Linie Oben) Vorne & Hinten</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Türflächen-Beleuchtung (Fläche Unten) Vorne & Hinten</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Türgriff-Beleuchtung Vorne & Hinten</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Türtaschen-Beleuchtung Vorne & Hinten</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Armaturleiste-Beleuchtung (Linie Oben) Vorne</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Ablagedach-Beleuchtung (Mittelkonsole)</p>
+                        </div>
+                        <div class="text-center">
+                            <div class=" p-4 rounded-lg mb-2">
+                                <i class="fas fa-bookmark text-[#268ED8] text-[70px]"></i>
+                            </div>
+                            <p class="text-sm text-black font-bold">Fußraum-Beleuchtung Vorne & Hinten</p>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="mt-6">
+                            <p class="text-sm italic text-black font-bold">Hinweise:</p>
+                        <ul class="list-disc list-inside text-sm text-black italic">
+                            <li>Dynamische Effekte können nur mit der Smartphone-App aktiviert werden.</li>
+                            <li>Variante mit neuer Armaturleiste & Mittelkonsole nur möglich mit Konfiguration "Dynamic-Mode"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Gallery Section -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-medium mb-6">PRODUKTGALERIE</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Left Card - Single Image -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="relative aspect-video group">
+                    <img src="assets/images/product6.jpeg" alt="Ambient Light Interior" class="w-full h-full object-cover">
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                        <i class="fas fa-search text-3xl mb-2"></i>
+                        <span class="text-sm font-medium">Klicken zum Vergrößern</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Card - YouTube Video -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="relative aspect-video">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?modestbranding=1&rel=0&showinfo=0" 
+                        title="Audi A3 S3 RS3 8Y: Dynamische Ambientebeleuchtung"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <div class="absolute top-0 left-0 p-4 flex items-center gap-2">
+                        <div class="w-10 h-10 rounded-full bg-black overflow-hidden">
+                            <img src="assets/images/logo.webp" alt="CARNEX" class="w-full h-full ">
+                        </div>
+                        <div class="text-white">
+                            <h4 class="text-sm font-medium">Audi A3 S3 RS3 8Y: Dynamische Ambientebeleuchtung</h4>
+                        </div>
+                    </div>
+                    <div class="absolute top-2 right-2 text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded">
+                        30 FRAGEN ÜBER DAS MMI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- FAQ Accordion Section -->
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <h2 class="text-2xl font-medium mb-6">Häufig gestellte Fragen</h2>
+    
+    <div class="space-y-2">
+        <!-- FAQ Item 1 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Wie kann ich einen Termin vereinbaren?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Wie läuft ein Umbau bei CarHex ab?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Wie lange dauert der Umbau der Ambientebeleuchtung?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Gibt es weitere Spots, die nicht im Konfigurator vorhanden sind?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Kann ich auch bestimmte Spots ohne das Grundpaket buchen?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Wo finde ich mehr Bilder zu den Umbauten?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Gibt es eine Gewährleistung?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Kann ich mein Fahrzeug auch früher abgeben?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 9 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Kann ich eine Besprechung vor dem Umbau vereinbaren?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 10 -->
+        <div class="bg-gray-100 rounded">
+            <button class="w-full flex items-center px-4 py-3 hover:bg-gray-200 transition-colors">
+                <i class="fas fa-plus text-[#0099FF] text-sm mr-3"></i>
+                <span class="text-sm font-medium">Was bedeutet Grundpaket und was ist inbegriffen?</span>
+            </button>
+            <div class="hidden px-4 pb-4">
+                <p class="text-sm text-gray-600">
+                    <!-- Content goes here -->
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Similar Products Section -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-medium mb-6">Ähnliche Produkte</h2>
+        
+        <div class="owl-carousel owl-theme">
+            <!-- Product 1 -->
+            <div class="item">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="assets/images/product1.jpeg" alt="BMW F30 F31 F34" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW 3er F30 F31 F34</a>
+                        </h3>
+                        <div class="flex justify-center mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                        <p class="text-xs text-gray-500">inkl. MwSt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="item">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="assets/images/product2.jpg" alt="BMW M2 Competition" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW M2 Competition/Coupe F87</a>
+                        </h3>
+                        <div class="flex justify-center mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                        <p class="text-xs text-gray-500">inkl. MwSt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="item">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="assets/images/product3.jpeg" alt="BMW X5 X6" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW X5 X6 E70 E74</a>
+                        </h3>
+                        <div class="flex justify-center mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                        <p class="text-xs text-gray-500">inkl. MwSt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="item">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="assets/images/product4.jpg" alt="BMW M3 F80" class="w-full h-48 object-cover">
+                        </a>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto Nachrüstung für BMW M3 F80</a>
+                        </h3>
+                        <div class="flex justify-center mb-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                        <p class="text-xs text-gray-500">inkl. MwSt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    
+    <!-- Footer -->
+    <footer class="bg-[#1C1C1C] text-white mt-8">
+
+        <!-- Footer Content -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex justify-center space-x-4 py-4 border-b border-gray-700">
+                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <img src="assets/images/logo.webp" alt="CARHEX" class="w-44">
+                    <p class="text-sm text-gray-400">
+                        Dein Ansprechpartner für Nachrüstung und Codierung von Sonderausstattung, individuelle LED Ambientebeleuchtung und CarPlay in deinem Auto.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        <p>Lehlestraße 15, 73035 Göppingen</p>
+                        <p>Tel: (+49) 0162 527 63 61</p>
+                        <p>Mail: info@carhex.de</p>
+                    </div>
+                </div>
+
+                <!-- Latest Posts -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4">LETZTE BEITRÄGE</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <img src="assets/images/product1.jpeg" alt="Hyundai i30N" class="w-20 h-16 object-cover">
+                            <div>
+                                <a href="#" class="hover:text-[#0099FF] text-sm">Hyundai i30N: 2-Zonen Ambientebeleuchtung</a>
+                                <p class="text-xs text-gray-400 mt-1">19. Juni 2022</p>
+                                <p class="text-xs text-gray-400">Keine Kommentare</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img src="assets/images/product2.jpg" alt="Mercedes GLC63 AMG" class="w-20 h-16 object-cover">
+                            <div>
+                                <a href="#" class="hover:text-[#0099FF] text-sm">Mercedes GLC63 AMG: Direkt aus der Niederlassung</a>
+                                <p class="text-xs text-gray-400 mt-1">7. April 2022</p>
+                                <p class="text-xs text-gray-400">Keine Kommentare</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Useful Links -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4">NÜTZLICHES</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Shop</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Ambientebeleuchtung</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Sternenhimmel</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Nachrüstungen</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Codierungen</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Apple-CarPlay</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Android-Auto</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Schlüssel</a></li>
+                    </ul>
+                </div>
+
+                <!-- General Links -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4">ALLGEMEIN</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Jobs</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Impressum</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Datenschutz</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Kontaktformular</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Blog</a></li>
+                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Widerruf</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700 py-4">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-400 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-[#0099FF]">CarHex</a> 2023
+                </div>
+                <div class="flex space-x-2">
+                    <img src="assets/images/cards.png" alt="Payment Methods" class="h-8">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+    <!-- Initialize Alpine Data -->
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('productData', () => ({
+                products: [],
+                init() {
+                    fetch('products.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            this.products = data.products;
+                        })
+                        .catch(error => {
+                            console.error('Error loading products:', error);
+                        });
+                }
+            }))
+        })
+    </script>
+
+    <!-- Add JavaScript for mobile menu toggle -->
+    <script>
+        document.getElementById('mobile-nav-button').addEventListener('click', function() {
+            document.getElementById('nav-content').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Add this JavaScript before the closing body tag -->
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.bg-gray-100 button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Toggle icon
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+    </script>
+
+    <!-- Add these before the closing </body> tag, after other scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                navText: [
+                    "<i class='fas fa-chevron-left'></i>",
+                    "<i class='fas fa-chevron-right'></i>"
+                ],
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    640:{
+                        items: 2
+                    },
+                    1024:{
+                        items: 3
+                    },
+                    1280:{
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Add this CSS in the <head> section -->
+    <style>
+        .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9) !important;
+            border-radius: 50% !important;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #0099FF !important;
+            font-size: 20px !important;
+        }
+        
+        .owl-nav button:hover {
+            background: #0099FF !important;
+            color: white !important;
+        }
+        
+        .owl-prev {
+            left: -20px;
+        }
+        
+        .owl-next {
+            right: -20px;
+        }
+        
+        /* Remove dots */
+        .owl-dots {
+            display: none;
+        }
+        
+        /* Add margin between items */
+        .owl-item {
+            padding: 0 10px;
+        }
+    </style>
+</body>
+</html>

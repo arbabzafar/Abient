@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Ambientebeleuchtung für Audi A4 B9 RS B9 inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product1.jpeg",
+      "sale": true
+    },
+    { 
+      "id": 2,
+      "name": "Ambientebeleuchtung für Audi A5 B9 RS B9 inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product2.jpg",
+      "sale": true
+    },
+    {
+      "id": 3,
+      "name": "Ambientebeleuchtung für Audi A4 B8 B9 inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product3.jpeg",
+      "sale": true
+    },
+    {
+      "id": 4,
+      "name": "Ambientebeleuchtung für Audi A4 S4 RS4 B9 inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product4.jpg",
+      "sale": true
+    },
+    {
+      "id": 5,
+      "name": "Ambientebeleuchtung für Audi A6 S6 F8 inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product5.jpeg",
+      "sale": true
+    },
+    {
+      "id": 6,
+      "name": "Ambientebeleuchtung für Audi A6 S6 F8 BEST inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product6.jpeg",
+      "sale": true
+    },
+    {
+      "id": 7,
+      "name": "Ambientebeleuchtung für Audi A8 C7/4G inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product7.jpeg",
+      "sale": true
+    },
+    {
+      "id": 8,
+      "name": "Ambientebeleuchtung für Audi A8 C8 inkl. Einbau (Nachrüstung)",
+      "price": 1549.00,
+      "oldPrice": 1899.00,
+      "rating": 5,
+      "image": "assets/images/product8.jpeg",
+      "sale": true
+    },
+    {
+      "id": 9,
+      "name": "Ambientebeleuchtung für Audi A7 C7/4G inkl. Einbau (Nachrüstung)",
+      "price": 899.00,
+      "oldPrice": 1299.00,
+      "rating": 5,
+      "image": "assets/images/product9.jpg",
+      "sale": true
+    }
+  ]
+} 
