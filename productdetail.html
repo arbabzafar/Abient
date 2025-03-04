@@ -22,7 +22,7 @@
         </div>
 
         <!-- Desktop and Mobile Content -->
-        <div id="menu-content" class="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
+        <div id="menu-content" class="hidden md:flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
             <!-- Left Side Contact Info -->
             <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
                 <div class="flex items-center">
@@ -38,7 +38,7 @@
             <!-- Right Side Social Media and Links -->
             <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
                 <!-- Social Media Icons -->
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3 justify-center">
                     <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="hover:text-gray-200"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:text-gray-200"><i class="fab fa-youtube"></i></a>
@@ -154,12 +154,7 @@
                     <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
                         <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">CODIERUNGEN</a>
                     </li>
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">NACHRÜSTUNGEN</a>
-                    </li>
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">SCHLÜSSEL</a>
-                    </li>
+                    
                     <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
                         <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">BLOG</a>
                     </li>
@@ -631,7 +626,7 @@
 </div>
 
 
-    <!-- Similar Products Section -->
+    <!-- Add this section before the Product Detail Section -->
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-2xl font-medium mb-6">Ähnliche Produkte</h2>
         
@@ -640,22 +635,25 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <a href="#">
-                            <img src="assets/images/product1.jpeg" alt="BMW F30 F31 F34" class="w-full h-48 object-cover">
-                        </a>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-sm font-medium mb-2">
-                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW 3er F30 F31 F34</a>
-                        </h3>
-                        <div class="flex justify-center mb-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
+                        <img src="assets/images/product1.jpeg" alt="Product 1" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
+                            999,00 €
+                        </span>
+                        <div class="absolute top-4 right-4">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
                         </div>
-                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Ambientebeleuchtung für BMW 2er F22 F23 inkl. Einbau (Nachrüstung)</a>
+                        </h3>
+                        <p class="text-[#0099FF] font-bold mb-1">999,00 €</p>
                         <p class="text-xs text-gray-500">inkl. MwSt.</p>
                     </div>
                 </div>
@@ -665,22 +663,25 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <a href="#">
-                            <img src="assets/images/product2.jpg" alt="BMW M2 Competition" class="w-full h-48 object-cover">
-                        </a>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-sm font-medium mb-2">
-                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW M2 Competition/Coupe F87</a>
-                        </h3>
-                        <div class="flex justify-center mb-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
+                        <img src="assets/images/product2.jpg" alt="Product 2" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
+                            999,00 €
+                        </span>
+                        <div class="absolute top-4 right-4">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
                         </div>
-                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Ambientebeleuchtung für Mercedes C-Klasse W205 mit 64 Farben inkl</a>
+                        </h3>
+                        <p class="text-[#0099FF] font-bold mb-1">999,00 €</p>
                         <p class="text-xs text-gray-500">inkl. MwSt.</p>
                     </div>
                 </div>
@@ -690,22 +691,25 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <a href="#">
-                            <img src="assets/images/product3.jpeg" alt="BMW X5 X6" class="w-full h-48 object-cover">
-                        </a>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-sm font-medium mb-2">
-                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW X5 X6 E70 E74</a>
-                        </h3>
-                        <div class="flex justify-center mb-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
+                        <img src="assets/images/product3.jpeg" alt="Product 3" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
+                            999,00 €
+                        </span>
+                        <div class="absolute top-4 right-4">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
                         </div>
-                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Ambientebeleuchtung für Mercedes CLS W218 inkl. Einbau (Nachrüstung)</a>
+                        </h3>
+                        <p class="text-[#0099FF] font-bold mb-1">999,00 €</p>
                         <p class="text-xs text-gray-500">inkl. MwSt.</p>
                     </div>
                 </div>
@@ -715,22 +719,25 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <a href="#">
-                            <img src="assets/images/product4.jpg" alt="BMW M3 F80" class="w-full h-48 object-cover">
-                        </a>
-                    </div>
-                    <div class="p-4 text-center">
-                        <h3 class="text-sm font-medium mb-2">
-                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto Nachrüstung für BMW M3 F80</a>
-                        </h3>
-                        <div class="flex justify-center mb-2">
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
+                        <img src="assets/images/product4.jpg" alt="Product 4" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
+                            999,00 €
+                        </span>
+                        <div class="absolute top-4 right-4">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
                         </div>
-                        <p class="text-[#0099FF] font-bold mb-1">579,00 €</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium mb-2">
+                            <a href="#" class="hover:text-[#0099FF]">Apple-CarPlay & Android-Auto für BMW 1er E81 E82 E87 E88</a>
+                        </h3>
+                        <p class="text-[#0099FF] font-bold mb-1">999,00 €</p>
                         <p class="text-xs text-gray-500">inkl. MwSt.</p>
                     </div>
                 </div>
@@ -896,7 +903,7 @@
                 loop: true,
                 margin: 20,
                 nav: true,
-                dots: false,
+                dots: true,
                 navText: [
                     "<i class='fas fa-chevron-left'></i>",
                     "<i class='fas fa-chevron-right'></i>"
@@ -947,15 +954,33 @@
             right: -20px;
         }
         
-        /* Remove dots */
         .owl-dots {
-            display: none;
+            margin-top: 20px !important;
         }
         
-        /* Add margin between items */
-        .owl-item {
-            padding: 0 10px;
+        .owl-dot span {
+            background: #D1D5DB !important;
+        }
+        
+        .owl-dot.active span {
+            background: #0099FF !important;
         }
     </style>
+
+    <!-- Add this JavaScript to toggle mobile menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('menu-content').classList.toggle('hidden');
+        });
+
+        // Hide menu on window resize if screen becomes larger than mobile breakpoint
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // md breakpoint
+                document.getElementById('menu-content').classList.remove('hidden');
+            } else {
+                document.getElementById('menu-content').classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
