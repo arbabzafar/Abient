@@ -12,16 +12,12 @@
     <!-- Top Bar -->
     <div class="w-full bg-[#0099FF] text-white px-4 py-2">
         <!-- Mobile Menu Button -->
-        <div class="md:hidden flex justify-end">
-            <button id="mobile-menu-button" class="text-white">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+        
 
         <!-- Desktop and Mobile Content -->
-        <div id="menu-content" class="hidden md:flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
+        <div id="menu-content" class=" md:flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
             <!-- Left Side Contact Info -->
-            <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4">
+            <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 hidden md:flex">
                 <div class="flex items-center">
                     <span class="mr-2 text-sm">Tel/WhatsApp:</span>
                     <a href="tel:+491625276361" class="hover:text-gray-200 text-sm break-all">+49 162 527 63 61</a>
@@ -33,7 +29,7 @@
             </div>
 
             <!-- Right Side Social Media and Links -->
-            <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
+            <div class="flex justify-center md:flex-row md:items-center md:justify-center md:space-y-0 md:space-x-4 gap-3">
                 <!-- Social Media Icons -->
                 <div class="flex items-center space-x-3">
                     <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook-f"></i></a>
@@ -52,21 +48,7 @@
         </div>
     </div>
 
-    <script>
-        // Toggle mobile menu
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('menu-content').classList.toggle('hidden');
-        });
-
-        // Hide menu on window resize if screen becomes larger than mobile breakpoint
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 768) { // md breakpoint
-                document.getElementById('menu-content').classList.remove('hidden');
-            } else {
-                document.getElementById('menu-content').classList.add('hidden');
-            }
-        });
-    </script>
+    
 
     <!-- Main Header -->
     <header class="bg-[#1C1C1C] pt-4">
