@@ -195,7 +195,7 @@
                 <!-- Main Image -->
                 <div class="bg-white rounded-lg shadow-md p-4 mb-4">
                     <div class="relative">
-                        <img :src="product?.image" :alt="product?.name" class="w-full h-auto">
+                        <img :src="selectedImage || product?.image" :alt="product?.name" class="w-full h-auto">
                         <span x-show="product?.sale" class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
                             SALE
                         </span>
@@ -203,9 +203,13 @@
                 </div>
                 <!-- Thumbnail Images -->
                 <div class="grid grid-cols-4 gap-4">
-                    <template x-for="i in 4">
-                        <div class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow">
-                            <img :src="product?.image" :alt="product?.name" class="w-full h-auto">
+                    <template x-for="(image, index) in product?.gallery" :key="index">
+                        <div 
+                            class="bg-white rounded-lg shadow-md p-2 cursor-pointer hover:shadow-lg transition-shadow"
+                            :class="{'ring-2 ring-[#0099FF]': selectedImage === image}"
+                            @click="selectedImage = image"
+                        >
+                            <img :src="image" :alt="product?.name + ' - Image ' + (index + 1)" class="w-full h-auto">
                         </div>
                     </template>
                 </div>
@@ -579,7 +583,6 @@
     <!-- Product Gallery Section -->
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-2xl font-medium mb-6">PRODUKTGALERIE</h2>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Left Card - Single Image -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -981,6 +984,7 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('productDetail', () => ({
                 product: null,
+                selectedImage: null,
                 async init() {
                     // Get product ID from URL
                     const urlParams = new URLSearchParams(window.location.search);
@@ -993,6 +997,9 @@
                         
                         // Find the specific product
                         this.product = data.products.find(p => p.id === productId);
+                        
+                        // Set initial selected image
+                        this.selectedImage = this.product?.image;
                         
                         // Update page title
                         document.title = this.product.name;
