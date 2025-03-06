@@ -105,61 +105,72 @@
         <!-- Navigation Menu -->
         <nav class="bg-[#414141] mt-4 border-t border-gray-700">
             <!-- Mobile Menu Button -->
-            <div class="px-4 md:hidden py-2 border-b border-gray-700">
+            <div class="px-4 xl:hidden py-2 border-b border-gray-700">
                 <button class="flex items-center text-white gap-2" id="mobile-nav-button">
                     <i class="fas fa-bars"></i>
                     <span>Menü</span>
                 </button>
             </div>
 
-            <!-- Add the mobile menu element -->
-            <div id="mobile-menu" class="hidden md:hidden">
-
-                <!-- Add your menu items here -->
-            </div>
-
             <!-- Desktop Navigation -->
-            <div class="hidden md:block px-4 md:px-8" id="nav-content">
-                <ul class="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">HOME</a>
+            <div class="hidden  pb-5 xl:pb-0 xl:block px-4 xl:px-8" id="nav-content">
+                <ul class="flex flex-col xl:flex-row xl:items-center xl:justify-between">
+                    <li class="border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 block xl:inline-block hover:text-[#0099FF] text-sm font-medium">HOME</a>
                     </li>
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">SHOP</a>
+                    <li class="border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 block xl:inline-block hover:text-[#0099FF] text-sm font-medium">SHOP</a>
                     </li>
-                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                    <li class="group relative border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
                             <span>AMBIENTEBELEUCHTUNG</span>
                             <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
                         </a>
+                        <!-- Added Dropdown Menu -->
+                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white shadow-lg z-50">
+                            <ul class="py-2">
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Audi A4</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Civic</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Mercedes</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                    <li class="group relative border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
                             <span>MULTIMEDIA</span>
                             <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
                         </a>
+                        <!-- Added Dropdown Menu -->
+                        <div class="hidden group-hover:block absolute left-0 mt-0 w-48 bg-white shadow-lg z-50">
+                            <ul class="py-2">
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Apple CarPlay</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Android Auto</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Navigation</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#0099FF]">Sound System</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                    <li class="group relative border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
                             <span>DASHCAM</span>
                             <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
                         </a>
                     </li>
-                    <li class="group relative border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 flex md:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
+                    <li class="group relative border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-sm font-medium">
                             <span>STERNENHIMMEL</span>
                             <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
                         </a>
                     </li>
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">CODIERUNGEN</a>
+                    <li class="border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 block xl:inline-block hover:text-[#0099FF] text-sm font-medium">CODIERUNGEN</a>
                     </li>
                     
-                    <li class="border-b md:border-b-0 md:border-r border-gray-700 md:border-white">
-                        <a href="#" class="text-white px-3 py-3 block md:inline-block hover:text-[#0099FF] text-sm font-medium">BLOG</a>
+                    <li class="border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-3 py-3 block xl:inline-block hover:text-[#0099FF] text-sm font-medium">BLOG</a>
                     </li>
-                    <li class="border-b md:border-b-0 border-gray-700">
-                        <a href="#" class="text-white px-4 py-3 block md:inline-block bg-[#FFC107] hover:bg-[#FFD147] text-sm font-medium transition-colors">GUTSCHEINE</a>
+                    <li class="border-b xl:border-b-0 xl:border-r border-gray-700 xl:border-white">
+                        <a href="#" class="text-white px-4 py-3 block xl:inline-block bg-[#FFC107] hover:bg-[#FFD147] text-sm font-medium transition-colors">GUTSCHEINE</a>
                     </li>
                 </ul>
             </div>
