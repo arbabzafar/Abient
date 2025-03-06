@@ -10,6 +10,8 @@
     <!-- Add Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Add custom Owl Carousel CSS -->
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
 </head>
 <body>
     <!-- Top Bar -->
@@ -797,7 +799,7 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <img src="assets/images/product2.jpg" alt="Product 2" class="w-full h-48 object-cover">
+                        <img src="assets/images/product2.jpeg" alt="Product 2" class="w-full h-48 object-cover">
                         <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
                             999,00 €
                         </span>
@@ -853,7 +855,7 @@
             <div class="item">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <div class="relative">
-                        <img src="assets/images/product4.jpg" alt="Product 4" class="w-full h-48 object-cover">
+                        <img src="assets/images/product4.jpeg" alt="Product 4" class="w-full h-48 object-cover">
                         <span class="absolute top-4 left-4 bg-[#0099FF] text-white px-3 py-1 text-sm font-semibold rounded">
                             999,00 €
                         </span>
@@ -923,7 +925,7 @@
                             </div>
                         </div>
                         <div class="flex gap-3">
-                            <img src="assets/images/product2.jpg" alt="Mercedes GLC63 AMG" class="w-20 h-16 object-cover">
+                            <img src="assets/images/product2.jpeg" alt="Mercedes GLC63 AMG" class="w-20 h-16 object-cover">
                             <div>
                                 <a href="#" class="hover:text-[#0099FF] text-sm">Mercedes GLC63 AMG: Direkt aus der Niederlassung</a>
                                 <p class="text-xs text-gray-400 mt-1">7. April 2022</p>
@@ -979,207 +981,13 @@
     <!-- Add Alpine.js -->
     <script src="//unpkg.com/alpinejs" defer></script>
     
-    <!-- Initialize Alpine Data -->
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('productDetail', () => ({
-                product: null,
-                selectedImage: null,
-                async init() {
-                    // Get product ID from URL
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const productId = parseInt(urlParams.get('id'));
-                    
-                    try {
-                        // Fetch products data
-                        const response = await fetch('products.json');
-                        const data = await response.json();
-                        
-                        // Find the specific product
-                        this.product = data.products.find(p => p.id === productId);
-                        
-                        // Set initial selected image
-                        this.selectedImage = this.product?.image;
-                        
-                        // Update page title
-                        document.title = this.product.name;
-                    } catch (error) {
-                        console.error('Error loading product:', error);
-                    }
-                }
-            }))
-        })
-    </script>
-
-    <!-- Add JavaScript for mobile menu toggle -->
-    <script>
-        document.getElementById('mobile-nav-button').addEventListener('click', function() {
-            document.getElementById('menu-content').classList.toggle('hidden');
-        });
-    </script>
-
-    <!-- Add this JavaScript before the closing body tag -->
-    <script>
-        // FAQ Accordion functionality
-        document.querySelectorAll('.bg-gray-100 button').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                // Toggle content visibility
-                content.classList.toggle('hidden');
-                
-                // Toggle icon
-                if (content.classList.contains('hidden')) {
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                } else {
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                }
-            });
-        });
-    </script>
-
-    <!-- Add these before the closing </body> tag, after other scripts -->
+    <!-- Add jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Add Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: true,
-                dots: true,
-                navText: [
-                    "<i class='fas fa-chevron-left'></i>",
-                    "<i class='fas fa-chevron-right'></i>"
-                ],
-                responsive:{
-                    0:{
-                        items: 1
-                    },
-                    640:{
-                        items: 2
-                    },
-                    1024:{
-                        items: 3
-                    },
-                    1280:{
-                        items: 4
-                    }
-                }
-            });
-        });
-    </script>
-
-    <!-- Add this CSS in the <head> section -->
-    <style>
-        .owl-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.9) !important;
-            border-radius: 50% !important;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            color: #0099FF !important;
-            font-size: 20px !important;
-        }
-        
-        .owl-nav button:hover {
-            background: #0099FF !important;
-            color: white !important;
-        }
-        
-        .owl-prev {
-            left: -20px;
-        }
-        
-        .owl-next {
-            right: -20px;
-        }
-        
-        .owl-dots {
-            margin-top: 20px !important;
-        }
-        
-        .owl-dot span {
-            background: #D1D5DB !important;
-        }
-        
-        .owl-dot.active span {
-            background: #0099FF !important;
-        }
-    </style>
-
-    <!-- Add this JavaScript to toggle mobile menu -->
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('menu-content').classList.toggle('hidden');
-        });
-
-        // Hide menu on window resize if screen becomes larger than mobile breakpoint
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 768) { // md breakpoint
-                document.getElementById('menu-content').classList.remove('hidden');
-            } else {
-                document.getElementById('menu-content').classList.add('hidden');
-            }
-        });
-    </script>
-
-    <!-- Add this JavaScript for tab functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active classes from all buttons
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('border-[#0099FF]', 'text-[#0099FF]');
-                        btn.classList.add('border-transparent', 'text-gray-500');
-                    });
-
-                    // Add active classes to clicked button
-                    button.classList.remove('border-transparent', 'text-gray-500');
-                    button.classList.add('border-[#0099FF]', 'text-[#0099FF]');
-
-                    // Hide all tab contents
-                    tabContents.forEach(content => {
-                        content.classList.add('hidden');
-                    });
-
-                    // Show selected tab content
-                    const tabId = button.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.remove('hidden');
-                });
-            });
-
-            // Star rating functionality
-            const stars = document.querySelectorAll('.fa-star');
-            stars.forEach((star, index) => {
-                star.addEventListener('click', () => {
-                    stars.forEach((s, i) => {
-                        if (i <= index) {
-                            s.classList.remove('far');
-                            s.classList.add('fas', 'text-yellow-400');
-                        } else {
-                            s.classList.remove('fas', 'text-yellow-400');
-                            s.classList.add('far');
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-     <script>
-        document.getElementById('mobile-nav-button').addEventListener('click', function() {
-            document.getElementById('nav-content').classList.toggle('hidden');
-        });
-    </script>
+    
+    <!-- Add custom JavaScript -->
+    <script src="assets/js/product-detail.js"></script>
 </body>
 </html>

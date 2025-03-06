@@ -1,0 +1,37 @@
+.owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #0099FF !important;
+    font-size: 20px !important;
+}
+
+.owl-nav button:hover {
+    background: #0099FF !important;
+    color: white !important;
+}
+
+.owl-prev {
+    left: -20px;
+}
+
+.owl-next {
+    right: -20px;
+}
+
+.owl-dots {
+    margin-top: 20px !important;
+}
+
+.owl-dot span {
+    background: #D1D5DB !important;
+}
+
+.owl-dot.active span {
+    background: #0099FF !important;
+} 
