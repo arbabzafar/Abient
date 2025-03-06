@@ -9,8 +9,8 @@
       "image": "assets/images/product1.jpeg",
       "sale": true,
       "description": "Professionelle Nachrüstung der Ambientebeleuchtung mit Servicepartner-Steuerung für Audi A4 B9 RS B9",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
-      "tags": ["audi", "a4", "b9", "rs", "ambientebeleuchtung", "nachrüstung"],
+      "categories": "Audi",
+      "tags": "Audi",
       "gallery": [
         "assets/images/product1.jpeg",
         "assets/images/product2.jpeg",
@@ -27,8 +27,8 @@
       "image": "assets/images/product2.jpeg",
       "sale": true,
       "description": "Premium Ambientebeleuchtung Nachrüstung für Audi A5 B9 mit erweiterter Funktionalität",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
-      "tags": ["audi", "a5", "b9", "premium", "ambientebeleuchtung"],
+      "categories": "suzuki",
+      "tags": "suzuki",
       "gallery": [
         "assets/images/product1.jpeg",
         "assets/images/product2.jpeg",
@@ -46,7 +46,7 @@
       "sale": true,
       "description": "Comfort Edition Ambientebeleuchtung speziell für Audi A4 B8 Modelle",
       "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
-      "tags": ["audi", "a4", "b8", "comfort", "ambientebeleuchtung"],
+      "tags": "Audi",
       "gallery": [
         "assets/images/product1.jpeg",
         "assets/images/product2.jpeg",
@@ -64,7 +64,7 @@
       "sale": true,
       "description": "Sport Package Ambientebeleuchtung für Audi S4/RS4 B9 mit Racing-Optionen",
       "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
-      "tags": ["audi", "s4", "rs4", "b9", "sport", "ambientebeleuchtung"],
+      "tags": "Dodge",
       "gallery": [
         "assets/images/product1.jpeg",
         "assets/images/product2.jpeg",
@@ -82,7 +82,7 @@
       "sale": true,
       "description": "Executive Ambientebeleuchtung Package für Audi A6/S6 F8",
       "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
-      "tags": ["audi", "a6", "s6", "f8", "executive", "ambientebeleuchtung"],
+      "tags": "civic",
       "gallery": [
         "assets/images/product1.jpeg",
         "assets/images/product2.jpeg",
@@ -99,7 +99,7 @@
       "image": "assets/images/product6.jpeg",
       "sale": true,
       "description": "Luxury Plus Ambientebeleuchtung für Audi A6/S6 F8 mit erweiterten Features",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
+      "categories": "Audi",
       "tags": ["audi", "a6", "s6", "f8", "luxury", "ambientebeleuchtung"],
       "gallery": [
         "assets/images/product1.jpeg",
@@ -117,7 +117,7 @@
       "image": "assets/images/product7.jpeg",
       "sale": true,
       "description": "Elite Package Ambientebeleuchtung für Audi A8 C7/4G",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
+      "categories": "Ferrari",
       "tags": ["audi", "a8", "c7", "4g", "elite", "ambientebeleuchtung"],
       "gallery": [
         "assets/images/product1.jpeg",
@@ -135,7 +135,7 @@
       "image": "assets/images/product8.jpeg",
       "sale": true,
       "description": "Ultimate Edition Ambientebeleuchtung für Audi A8 C8",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
+      "categories": "BMW",
       "tags": ["audi", "a8", "c8", "ultimate", "ambientebeleuchtung"],
       "gallery": [
         "assets/images/product1.jpeg",
@@ -153,7 +153,7 @@
       "image": "assets/images/product9.jpeg",
       "sale": true,
       "description": "Premium Select Ambientebeleuchtung für Audi A7 C7/4G",
-      "categories": ["Alle Kategorien", "Ambientebeleuchtung"],
+      "categories": "BMW",
       "tags": ["audi", "a7", "c7", "4g", "premium", "ambientebeleuchtung"],
       "gallery": [
         "assets/images/product1.jpeg",
