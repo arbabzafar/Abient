@@ -28,36 +28,6 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu button functionality
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const menuContent = document.getElementById('menu-content');
-    if (mobileMenuButton && menuContent) {
-        mobileMenuButton.addEventListener('click', function() {
-            menuContent.classList.toggle('hidden');
-        });
-
-        // Hide menu on window resize if screen becomes larger than mobile breakpoint
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 768) { // md breakpoint
-                menuContent.classList.remove('hidden');
-            } else {
-                menuContent.classList.add('hidden');
-            }
-        });
-    }
-
-    // Mobile nav button functionality
-    const mobileNavButton = document.getElementById('mobile-nav-button');
-    const navContent = document.getElementById('nav-content');
-    if (mobileNavButton && navContent) {
-        mobileNavButton.addEventListener('click', function() {
-            navContent.classList.toggle('hidden');
-        });
-    }
-});
-
 // FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.bg-gray-100 button').forEach(button => {
