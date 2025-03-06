@@ -241,10 +241,10 @@
                 </div>
 
                 <!-- Products Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-data="productData">
-                    <template x-for="product in products" :key="product.id">
-                        <!-- Product Card - Making the whole card clickable -->
-                        <a :href="'productdetail.html?id=' + product.id" class=" overflow-hidden " target="_blank">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-data>
+                    <template x-for="product in $store.productData.getFilteredProducts()" :key="product.id">
+                        <!-- Product Card -->
+                        <a :href="'productdetail.html?id=' + product.id" class="overflow-hidden" target="_blank">
                             <!-- Sale Badge -->
                             <div class="relative">
                                 <span x-show="product.sale" class="absolute top-4 left-4 bg-[#0099FF] text-white px-2 py-1 text-sm font-semibold rounded">
@@ -260,7 +260,6 @@
                                         <button class="bg-white p-2 rounded-full hover:bg-[#0099FF] hover:text-white transition-colors">
                                             <i class="far fa-heart"></i>
                                         </button>
-                                        
                                     </div>
                                     <div class="absolute bottom-0 left-0 right-0 bg-[#0099FF] bg-opacity-10 text-white p-2 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                                         <p class="text-sm text-center">KONFIGURIEREN</p>
@@ -313,10 +312,14 @@
                 </div>
 
                 <!-- Manufacturers -->
-                <div class="rounded-lg  p-4 mt-6">
+                <div class="rounded-lg p-4 mt-6" x-data>
                     <h2 class="font-bold text-lg mb-4 text-[#0D99EB]">HERSTELLER</h2>
-                    <select class="w-full p-2 border rounded focus:outline-none focus:border-[#0099FF]">
-                        <option>AUDI</option>
+                    <select class="w-full p-2 border rounded focus:outline-none focus:border-[#0099FF]" 
+                            x-model="$store.productData.selectedCategory">
+                        <option value="">Alle Kategorien</option>
+                        <template x-for="category in $store.productData.categories">
+                            <option x-text="category" :value="category"></option>
+                        </template>
                     </select>
                 </div>
 
@@ -430,20 +433,44 @@
     <!-- Initialize Alpine Data -->
     <script>
         document.addEventListener('alpine:init', () => {
-            Alpine.data('productData', () => ({
+            Alpine.store('productData', {
                 products: [],
+                categories: [],
+                selectedCategory: '',
                 init() {
                     fetch('products.json')
                         .then(response => response.json())
                         .then(data => {
                             this.products = data.products;
+                            // Extract unique categories
+                            const uniqueCategories = new Set();
+                            data.products.forEach(product => {
+                                if (Array.isArray(product.categories)) {
+                                    product.categories.forEach(cat => uniqueCategories.add(cat));
+                                } else if (typeof product.categories === 'string') {
+                                    uniqueCategories.add(product.categories);
+                                }
+                            });
+                            this.categories = Array.from(uniqueCategories).filter(cat => cat).sort();
                         })
                         .catch(error => {
                             console.error('Error loading products:', error);
                         });
+                },
+                getFilteredProducts() {
+                    if (!this.selectedCategory) return this.products;
+                    return this.products.filter(product => {
+                        if (Array.isArray(product.categories)) {
+                            return product.categories.includes(this.selectedCategory);
+                        }
+                        return product.categories === this.selectedCategory;
+                    });
                 }
-            }))
-        })
+            });
+
+            // Initialize the store
+            Alpine.store('productData').init();
+        });
     </script>
 
     <!-- Add JavaScript for mobile menu toggle -->
