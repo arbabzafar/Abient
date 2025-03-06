@@ -1,37 +1,46 @@
-.owl-nav button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    color: #0099FF !important;
-    font-size: 20px !important;
-}
 
-.owl-nav button:hover {
-    background: #0099FF !important;
-    color: white !important;
-}
-
-.owl-prev {
-    left: -20px;
-}
-
-.owl-next {
-    right: -20px;
-}
-
-.owl-dots {
-    margin-top: 20px !important;
-}
-
-.owl-dot span {
-    background: #D1D5DB !important;
-}
-
-.owl-dot.active span {
-    background: #0099FF !important;
-} 
+    .owl-nav {
+        margin-top: 0 !important;
+    }
+    .owl-nav button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px !important;
+        height: 60px !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 50% !important;
+        transition: all 0.3s ease !important;
+        outline: none !important;
+    }
+    .owl-nav button:hover {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+    .owl-nav button i {
+        color: white;
+        font-size: 24px;
+    }
+    .owl-prev {
+        left: 20px;
+    }
+    .owl-next {
+        right: 20px;
+    }
+    /* Custom styles for dots */
+    .owl-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .owl-dots .owl-dot span {
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+    .owl-dots .owl-dot.active span {
+        background: white;
+        transform: scale(1.2);
+    }
