@@ -6,20 +6,27 @@
     <title>index</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <!-- Add Font Awesome for social media icons -->
+     <link rel="stylesheet" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Add Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+   
 </head>
 <body>
     <!-- Top Bar -->
-    <div class="w-full bg-[#5476DB] text-white px-15 py-3">
+    <div class="w-full bg-[#5476DB] text-white px-4 py-3">
         <!-- Mobile Menu Button -->
         
 
         <!-- Desktop and Mobile Content -->
-        <div id="menu-content" class=" md:flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
+        <div id="menu-content" class="max-w-[1200px] mx-auto flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
             <!-- Left Side Contact Info -->
-            <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 hidden md:flex gap-2">
-                <div class="flex items-center ">
-                    
+            <div class="flex justify-between flex-row md:items-center space-y-2 md:space-y-0 hidden md:space-x-4">
+                <div class="flex items-center">
                     <a href="tel:+491625276361" class="hover:text-gray-200 text-md break-all">
                         Stadtstraße 3, 72172 Sulz</a>
                 </div>
@@ -30,7 +37,7 @@
             </div>
 
             <!-- Right Side Social Media and Links -->
-            <div class="flex justify-center md:flex-row md:items-center md:justify-center md:space-y-0 md:space-x-4 gap-3">
+            <div class="flex flex-col md:flex-row items-center md:items-center md:justify-center md:space-y-0 md:space-x-4 gap-3">
                 <!-- Navigation Links -->
                 <div class="flex items-center space-x-6 gap-5">
                     <a href="#" class="hover:text-gray-200 text-sm">KONTAKT</a>
@@ -48,43 +55,46 @@
     
 
     <!-- Main Header -->
-    <header class="bg-[#1C1C1C] pt-4">
-        <!-- Logo and Search Section -->
-        <div class="px-10 md:px-8 flex flex-col md:flex-row items-center  justify-around">
-            <!-- Logo -->
-            <div class="w-44 md:w-44 mb-4 md:mb-0">
-                <a href="/">
-                    <img src="assets/images/SSTuningBannerQuerformat500x500px.svg" alt="CARHEX" class="w-full h-30">
-                </a>
-            </div>
+    <div class="bg-[#1C1C1C]">
+        <header class="pt-4 max-w-[1200px] mx-auto">
+            <!-- Logo and Search Section -->
+            <div class="px-4 md:px-8 flex gap-10px flex-col md:flex-row items-center justify-between">
+                <!-- Logo -->
+                <div class="w-44 md:w-44 mb-4 md:mb-0">
+                    <a href="/">
+                        <img src="assets/images/SSTuningBannerQuerformat500x500px.svg" alt="CARHEX" class="w-full h-30">
+                    </a>
+                </div>
 
-            <!-- Search Bar and Category Dropdown -->
-            <div class="flex-1 w-50 md:max-w-xl mx-auto">
-                <div class="flex h-[42px] justify-center">
-                    <input 
-                        type="text" 
-                        placeholder="Suche nach Produkten" 
-                        class="w-75 px-4 py-2 bg-white  focus:outline-none text-sm "
-                    >
-                    <button class="bg-white px-4 md:px-6  hover:bg-[#0088ee] transition-colors">
-                        <i class="fas fa-search text-black"></i>
-                    </button>
+                <!-- Search Bar and Category Dropdown -->
+                <div class="flex-1 w-full md:max-w-xl mx-auto">
+                    <form class="search-form">
+                        <div class="flex h-[42px] justify-center">
+                            <input 
+                                type="text" 
+                                placeholder="Suche nach Produkten" 
+                                class="w-full md:w-75 px-4 py-2 bg-white focus:outline-none text-sm"
+                            >
+                            <button type="submit" class="bg-white px-4 md:px-6 hover:bg-[#0088ee] transition-colors">
+                                <i class="fas fa-search text-black"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center mb-10 md:mb-0 justify-center md:justify-between w-full md:w-auto md:gap-8 mt-4 md:mt-0">
+                    <!-- Login/Register -->
+                    <a href="#" class="flex items-center text-white gap-2 hover:text-[#0099FF] transition-colors">
+                        <i class="fas fa-phone text-xl md:text-xl"></i>
+                        <span class="text-xl md:text-xl whitespace-nowrap"> +49 (152) 2182862</span>
+                    </a>
                 </div>
             </div>
-
-            <!-- User Actions -->
-            <div class="flex items-center justify-between w-full md:w-auto md:gap-8 mt-4 md:mt-0">
-                <!-- Login/Register -->
-                <a href="#" class="flex items-center text-white gap-2 hover:text-[#0099FF] transition-colors">
-                    <i class="fas fa-phone text-xl md:text-xl"></i>
-                    <span class="text-xl md:text-xl whitespace-nowrap"> +49 (152) 2182862</span>
-                </a>
-                
-            </div>
-        </div>
-
+        </header>
+    </div>
         <!-- Navigation Menu -->
-        <nav class="bg-[#414141] mt-4 border-t border-gray-700 py-1">
+    <nav class="bg-[#414141]  border-t border-gray-700 py-1 sticky top-0 z-50">
             <!-- Mobile Menu Button -->
             <div class="px-4 xl:hidden py-2 border-b border-gray-700">
                 <button class="mobile-menu-toggle flex items-center text-white gap-2">
@@ -115,7 +125,7 @@
                     </li>
                     <li class="group relative">
                         <a href="#" class="text-gray-400 px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-lg font-bold">
-                            <span>Sternenhimmel</span>
+                            <span>Codierungen</span>
                             <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
                         </a>
                         <!-- Added Dropdown Menu -->
@@ -131,13 +141,14 @@
                     <li class="group relative">
                         <a href="#" class="text-gray-400 px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-lg font-bold">
                             <span>Carplay </span>
-                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                            
                         </a>
                     </li>
                     <li class="group relative">
                         <a href="#" class="text-gray-400 px-3 py-3 flex xl:inline-flex items-center justify-between hover:text-[#0099FF] text-lg font-bold">
-                            <span>Codierungen</span>
-                            <i class="fas fa-chevron-down ml-1 text-[10px] mt-1"></i>
+                            <span>Sternenhimmel
+                            </span>
+                           
                         </a>
                     </li>
                     <li class="">
@@ -152,112 +163,177 @@
                 </ul>
             </div>
         </nav>
-    </header>
 
     <!-- Slider Section -->
-    <div class=" relative bg-[#ECF0FB] ">
+    <div class="relative bg-[#ECF0FB]">
         <!-- Slider container -->
-        <div class="overflow-hidden relative container-md mx-auto px-8 py-8 max-w-[1200px]">
-            <!-- Slide -->
-            <div class="relative transition-opacity duration-300 ease-in-out">
-                <img src="assets/images/IMG_1033.JPEG" alt="Ambientebeleuchtung" class="w-full h-[500px] object-cover">
-                
-                <!-- Slide Content -->
-                <div class="absolute bottom-8 left-8">
-                    <div class="text-white">
-                        <h2 class="text-2xl font-bold mb-2">AMBIENTEBELEUCHTUNG</h2>
-                        <p class="text-lg">steuerbar über Original System</p>
+        <div class="overflow-hidden relative container-md mx-auto px-4 py-8 max-w-[1200px]">
+            <!-- Owl Carousel -->
+            <div class="owl-carousel owl-theme">
+                <!-- Slide 1 -->
+                <div class="item">
+                    <div class="relative">
+                        <img src="assets/images/IMG_1033.JPEG" alt="Ambientebeleuchtung" class="w-full h-[500px] object-cover">
+                        <div class="absolute bottom-8 left-8">
+                            <div class="text-white">
+                                <h2 class="text-2xl font-bold mb-2">AMBIENTEBELEUCHTUNG</h2>
+                                <p class="text-lg">steuerbar über Original System</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="item">
+                    <div class="relative">
+                        <img src="assets/images/product1.jpeg" alt="Sternenhimmel" class="w-full h-[500px] object-cover">
+                        <div class="absolute bottom-8 left-8">
+                            <div class="text-white">
+                                <h2 class="text-2xl font-bold mb-2">STERNENHIMMEL</h2>
+                                <p class="text-lg">Luxuriöse Innenraumbeleuchtung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="item">
+                    <div class="relative">
+                        <img src="assets/images/product2.jpeg" alt="CarPlay" class="w-full h-[500px] object-cover">
+                        <div class="absolute bottom-8 left-8">
+                            <div class="text-white">
+                                <h2 class="text-2xl font-bold mb-2">CARPLAY</h2>
+                                <p class="text-lg">Nahtlose Integration</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Navigation Arrows -->
-            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-75 transition-all">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-75 transition-all">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <!-- Welcome Section -->
+    <div class="bg-white py-24" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <div class="text-center ">
+                <h1 class="text-4xl font-bold text-[#5476DB] mb-4">S&S Tuning – Innenraum- & Fahrzeugveredelung</h1>
+                <div class="flex  items-center gap-2 ">
+                    <span class="text-red-600 text-2xl">🚗</span>
+                    <p class="text-xl font-semibold">Individuelles Fahrzeug-Tuning für ein einzigartiges Fahrerlebnis!</p>
+                </div>
+            </div>
+            
+            <div class=" text-lg text-gray-700">
+                <p>
+                    Willkommen bei S&S Tuning, deiner ersten Adresse für <span class="font-semibold">hochwertige Innenraum- und Außenveredelung</span>. Mit langjähriger Erfahrung und einer echten Leidenschaft für Autos bieten wir individuelle Lösungen, die dein Fahrzeug einzigartig machen. Unsere Mission: <span class="font-semibold">Fahrzeuge auf das nächste Level bringen!</span>
+                </p>
+                
+                <p>
+                    Egal ob <span class="font-semibold">Ambientebeleuchtung, Sternenhimmel, CarPlay-Integration oder sportliche Außen-Umbauten</span> – wir sorgen für ein einzigartiges Fahrerlebnis, das dich begeistert.
+                </p>
+            </div>
+        </div>
+    </div>
+    
 
-            <!-- Pagination Dots -->
-            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button class="w-2 h-2 rounded-full bg-white"></button>
-                <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
-                <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
-                <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
-                <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
-                <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
+    <!-- Specialties Section -->
+    <div class="bg-[#ECF0FB] py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <h2 class="text-6xl font-bold text-center mb-16" data-aos="fade-down" data-aos-delay="200">Unsere Fachgebiete</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Ambientebeleuchtung -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/images/product1.jpeg" alt="Ambientebeleuchtung" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">AMBIENTEBELEUCHTUNG</h3>
+                    </div>
+                </a>
+
+                <!-- Sternenhimmel -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="assets/images/product2.jpeg" alt="Sternenhimmel" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">STERNENHIMMEL</h3>
+                    </div>
+                </a>
+
+                <!-- CarPlay/AndroidAuto -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="assets/images/product3.jpeg" alt="CarPlay/AndroidAuto" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">CARPLAY/ ANDROIDAUTO</h3>
+                    </div>
+                </a>
+
+                <!-- Außen-Umbauten -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="assets/images/product4.jpeg" alt="Außen-Umbauten" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">AUßEN-UMBAUTEN</h3>
+                    </div>
+                </a>
+
+                <!-- Rückleuchten -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="700">
+                    <img src="assets/images/product5.jpeg" alt="Rückleuchten" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">RÜCKLEUCHTEN</h3>
+                    </div>
+                </a>
+
+                <!-- Codierungen -->
+                <a href="#" class="relative group overflow-hidden cursor-pointer" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="assets/images/product6.jpeg" alt="Codierungen" class="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                        <h3 class="absolute bottom-0 w-full text-white text-2xl font-bold p-6 text-center transform transition-transform duration-300 group-hover:-translate-y-2">CODIERUNGEN</h3>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Main Content with Sidebar Layout -->
-    <div class="container-md mx-auto px-8 py-8">
+    <div class="max-w-[1200px] mx-auto px-8 py-8">
         <div class="flex flex-col md:flex-row gap-8">
+
 
             
 
             <!-- Main Content Area -->
             <div class="flex-1">
-                <!-- Breadcrumb -->
-                <div class="flex flex-col  md:flex-col lg:flex-row gap-4 text-sm mb-4 justify-between">
-                    <!-- Breadcrumb -->
-                    <div class="flex items-center gap-2">
-                        <a href="#" class="hover:text-[#0099FF]">Startseite</a>
-                        <span>/</span>
-                        <span>Ambientebeleuchtung</span>
-                    </div>
+                <!-- Breadcrumb and Filters Section -->
+                <div class="bg-white  p-6 mb-8">
+                    <div class="flex flex-col lg:flex-row justify-end items-center gap-6">
+                
                     
-                    <!-- Controls -->
-                    <div class="flex flex-wrap items-center gap-4">
-                        <!-- Product Count -->
-                        <div class="flex items-center gap-2">
-                            <span class="whitespace-nowrap">Anzahl der Produkte:</span>
-                            <div class="font-medium space-x-1">
-                                <button class="hover:text-[#0099FF]">9</button>
-                                <span>/</span>
-                                <button class="hover:text-[#0099FF]">24</button>
-                                <span>/</span>
-                                <button class="hover:text-[#0099FF]">36</button>
+                        <!-- Category Selector -->
+                        <div class="w-full lg:w-auto min-w-[280px]" x-data>
+                            <div class="relative">
+                                <select 
+                                    class="w-full appearance-none bg-[#ECF0FB] text-gray-700 py-3 px-4 pr-8 rounded-lg border-2 border-[#ECF0FB] focus:border-[#5476DB] focus:outline-none transition-colors cursor-pointer"
+                                    x-model="$store.productData.selectedCategory"
+                                >
+                                    <option value="" class="py-2">Alle Kategorien</option>
+                                    <template x-for="category in $store.productData.categories">
+                                        <option :value="category" x-text="category" class="py-2"></option>
+                                    </template>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
+                                    <i class="fas fa-chevron-down text-[#5476DB]"></i>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- View Toggle -->
-                        <div class="flex gap-2">
-                            <button class="text-[#0099FF] hover:opacity-80"><i class="fas fa-th-large"></i></button>
-                            <button class="text-gray-400 hover:text-[#0099FF]"><i class="fas fa-th"></i></button>
-                        </div>
                         
-                        <!-- Sort Dropdown -->
-                        <select class="text-sm border rounded px-2 py-1 focus:outline-none focus:border-[#0099FF]">
-                            <option>Standardsortierung</option>
-                        </select>
                     </div>
                 </div>
 
-                <!-- Product Grid Header -->
-                <div class="flex flex-wrap justify-between items-center mb-6">
-                    <!-- Filter Tags -->
-                    <div class="flex items-center gap-4 text-sm">
-                        <button class="flex items-center gap-2 hover:text-[#0099FF]">
-                            <span>Filter entfernen</span>
-                            <i class="fas fa-times"></i>
-                        </button>
-                        <button class="flex items-center gap-2 hover:text-[#0099FF]">
-                            <span>AUDI</span>
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <!-- Product Count and View Options -->
-                    
-                </div>
+                
 
                 <!-- Products Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-data>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-data data-aos="fade-up" data-aos-duration="1000">
                     <template x-for="product in $store.productData.getFilteredProducts()" :key="product.id">
                         <!-- Product Card -->
-                        <a :href="'productdetail.html?id=' + product.id" class="overflow-hidden" target="_blank">
+                        <a :href="'productdetail.html?id=' + product.id" class="overflow-hidden" target="_blank" data-aos="zoom-in" data-aos-delay="300">
                             <!-- Sale Badge -->
                             <div class="relative">
                                 <span x-show="product.sale" class="absolute top-4 left-4 bg-[#0099FF] text-white px-2 py-1 text-sm font-semibold rounded">
@@ -297,146 +373,240 @@
                                     <span class="text-[#0099FF] font-bold" x-text="product.price.toFixed(2) + ' €'"></span>
                                 </div>
                                 
-                                <div class="text-xs text-gray-500 mt-1 text-center">inkl. MwSt.</div>
+                                
                             </div>
                         </a>
                     </template>
                 </div>
-            </div>
-            <!-- Left Sidebar -->
-            <div class="w-full md:w-64 flex-shrink-0">
-                <!-- Categories -->
-                <div class=" rounded-lg  p-4">
-                    <h2 class="font-bold text-lg mb-4 text-[#0D99EB]">KATEGORIEN</h2>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Alle Kategorien</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Ambientebeleuchtung</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Apple CarPlay & Android Auto</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Codierungen</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Dashcam</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">ECU</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Individuell</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Memorium LED-Umrüst...</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Nachrüstungen</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Schlüssel</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Sternenhimmel</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Techo LED-Umbau</a></li>
-                    </ul>
                 </div>
 
-                <!-- Manufacturers -->
-                <div class="rounded-lg p-4 mt-6" x-data>
-                    <h2 class="font-bold text-lg mb-4 text-[#0D99EB]">HERSTELLER</h2>
-                    <select class="w-full p-2 border rounded focus:outline-none focus:border-[#0099FF]" 
-                            x-model="$store.productData.selectedCategory">
-                        <option value="">Alle Kategorien</option>
-                        <template x-for="category in $store.productData.categories">
-                            <option x-text="category" :value="category"></option>
-                        </template>
-                    </select>
+        </div>
+    </div>
+    <!-- FAQ Section -->
+    <div class="bg-white py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <h2 class="text-6xl font-bold text-center mb-16" data-aos="fade-down" data-aos-delay="200">Fakten & Fragen</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Kann ich ohne Termin vorbeischauen?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Natürlich kannst du gerne vorbeischauen! Wir nehmen uns gerne Zeit für ein persönliches Gespräch.</p>
+                    </div>
                 </div>
 
-                <!-- Model -->
-                <div class=" rounded-lg  p-4 mt-6">
-                    <h2 class="font-bold text-lg mb-4 text-[#0D99EB]">MODELL</h2>
-                    <select class="w-full p-2 border rounded focus:outline-none focus:border-[#0099FF]">
-                        <option>Auswähl: Model</option>
-                    </select>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Ich kann mein Fahrzeug nicht auf eurer Webseite finden, baut ihr da trotzdem was um?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Ja, wir finden für jedes Fahrzeug die passende Lösung!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Bietet ihr Garantie auf eure Arbeiten?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Ja, wir bieten eine umfassende Garantie auf alle unsere Arbeiten.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Wie lange dauert der Umbau je nach Leistung?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Die Dauer variiert je nach Umfang der Arbeiten, typischerweise zwischen 1-3 Tagen.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Wie kurzfristig kann ich einen Termin bekommen?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Wir versuchen, innerhalb von 1-2 Wochen einen Termin anzubieten.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Kann ich den Einbau auch an einem Wochenende machen lassen?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Ja, nach Absprache sind auch Wochenendtermine möglich.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item bg-white rounded-lg shadow-sm hover:bg-[#ECF0FB] transition-colors">
+                    <button class="faq-button w-full px-6 py-4 text-left flex justify-between items-center hover:text-[#5476DB] transition-colors">
+                        <span class="text-xl font-semibold">Erlischt die Fahrzeuggarantie bei einem Umbau?</span>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600">Nein, unsere Umbauten sind TÜV-konform und beeinflussen die Fahrzeuggarantie nicht.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-[#1C1C1C] text-white mt-8">
+    <!-- Map Section -->
+    <div class="bg-[#ECF0FB] py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <h2 class="text-6xl font-bold text-center mb-16" data-aos="fade-down" data-aos-delay="200">Unser Standort</h2>
+            
+            <div class="relative w-full rounded-lg overflow-hidden shadow-lg">
+                <!-- Map Container -->
+                <div class="relative">
+                    <!-- Google Maps Embed -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.698817087766!2d9.2815492!3d48.7123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799c2e2a9096e45%3A0x3b2b73f0f6c7b0a8!2sStadtstra%C3%9Fe%203%2C%2072172%20Sulz%20am%20Neckar!5e0!3m2!1sde!2sde!4v1635789012345!5m2!1sde!2sde"
+                        width="100%"
+                        height="600"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full"
+                    ></iframe>
 
-        <!-- Footer Content -->
-        <div class="container mx-auto px-4 py-8">
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Company Info -->
-                <div class="space-y-4">
-                    <div class="flex justify-center space-x-4 py-4 border-b border-gray-700">
-                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="hover:text-[#0099FF]"><i class="fab fa-tiktok"></i></a>
+                    <!-- Address Overlay -->
+                    <div class="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md max-w-sm">
+                        <h3 class="text-xl font-bold mb-2">Stadtstraße 3</h3>
+                        <p class="text-gray-600">Stadtstraße 3, 72172 Sulz am Neckar, Germany</p>
+                        <a 
+                            href="https://www.google.com/maps/dir//Stadtstraße+3,+72172+Sulz+am+Neckar" 
+                            target="_blank"
+                            class="text-[#5476DB] hover:text-[#0099FF] mt-2 inline-flex items-center gap-2"
+                        >
+                            <span>Directions</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <img src="assets/images/logo.webp" alt="CARHEX" class="w-44">
-                    <p class="text-sm text-gray-400">
-                        Dein Ansprechpartner für Nachrüstung und Codierung von Sonderausstattung, individuelle LED Ambientebeleuchtung und CarPlay in deinem Auto.
-                    </p>
-                    <div class="text-sm text-gray-400">
-                        <p>Lehlestraße 15, 73035 Göppingen</p>
-                        <p>Tel: (+49) 0162 527 63 61</p>
-                        <p>Mail: info@carhex.de</p>
+
+                    <!-- Controls -->
+                    <div class="absolute bottom-4 right-4 flex gap-2">
+                        <button class="bg-white p-2 rounded-lg shadow-md hover:bg-gray-50">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </button>
+                        <button class="bg-white p-2 rounded-lg shadow-md hover:bg-gray-50">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </button>
                     </div>
-                </div>
-
-                <!-- Latest Posts -->
-                <div>
-                    <h3 class="text-lg font-medium mb-4">LETZTE BEITRÄGE</h3>
-                    <div class="space-y-4">
-                        <div class="flex gap-3">
-                            <img src="assets/images/product1.jpeg" alt="Hyundai i30N" class="w-20 h-16 object-cover">
-                            <div>
-                                <a href="#" class="hover:text-[#0099FF] text-sm">Hyundai i30N: 2-Zonen Ambientebeleuchtung</a>
-                                <p class="text-xs text-gray-400 mt-1">19. Juni 2022</p>
-                                <p class="text-xs text-gray-400">Keine Kommentare</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <img src="assets/images/product2.jpeg" alt="Mercedes GLC63 AMG" class="w-20 h-16 object-cover">
-                            <div>
-                                <a href="#" class="hover:text-[#0099FF] text-sm">Mercedes GLC63 AMG: Direkt aus der Niederlassung</a>
-                                <p class="text-xs text-gray-400 mt-1">7. April 2022</p>
-                                <p class="text-xs text-gray-400">Keine Kommentare</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Useful Links -->
-                <div>
-                    <h3 class="text-lg font-medium mb-4">NÜTZLICHES</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Shop</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Ambientebeleuchtung</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Sternenhimmel</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Nachrüstungen</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Codierungen</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Apple-CarPlay</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Android-Auto</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Schlüssel</a></li>
-                    </ul>
-                </div>
-
-                <!-- General Links -->
-                <div>
-                    <h3 class="text-lg font-medium mb-4">ALLGEMEIN</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Jobs</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Impressum</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Datenschutz</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Kontaktformular</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Blog</a></li>
-                        <li><a href="#" class="text-sm hover:text-[#0099FF]">Widerruf</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-gray-700 py-4">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-                <div class="text-sm text-gray-400 mb-4 md:mb-0">
-                    <a href="#" class="hover:text-[#0099FF]">CarHex</a> 2023
+    
+
+   
+
+    <!-- Footer -->
+    <footer class="bg-[#1C1C1C] text-white py-16">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <!-- Logo -->
+            <div class="flex justify-between items-center ">
+                <img src="assets/images/SSTuningBannerQuerformat500x500px.svg" alt="S&S Tuning" class="w-48">
+                  <!-- Social Media Icons -->
+            <div class="flex justify-end gap-4 mt-12">
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/images/instagram.png" alt="Instagram" class="w-8 h-8">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/images/whatsapp.png" alt="WhatsApp" class="w-8 h-8">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="assets/images/sozialen-medien.png" alt="TikTok" class="w-8 h-8">
+                </a>
+                    </div>
                 </div>
-                <div class="flex space-x-2">
-                    <img src="assets/images/cards.png" alt="Payment Methods" class="h-8">
+
+            <!-- Divider -->
+            <div class="border-b border-gray-700 mb-12"></div>
+
+            <!-- Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Ambientebeleuchtung</a></li>
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Sternenhimmel</a></li>
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Carplay</a></li>
+                    </ul>
+                </div>
+
+                <!-- Andere Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Andere Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Impressum</a></li>
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">Datenschutzerklärung</a></li>
+                        <li><a href="#" class="hover:text-[#5476DB] transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontakt -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Kontakt</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-[#5476DB]"></i>
+                            <span>Stadtstraße 3, 72172 Sulz</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-[#5476DB]"></i>
+                            <a href="mailto:info@sunds-tuning.com" class="hover:text-[#5476DB] transition-colors">info@sunds-tuning.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone text-[#5476DB]"></i>
+                            <a href="tel:+4915221882862" class="hover:text-[#5476DB] transition-colors">+49 152 2188 2862</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
+          
         </div>
     </footer>
 
@@ -453,5 +623,86 @@
             document.getElementById('nav-content').classList.toggle('hidden');
         });
     </script>
+
+    <!-- FAQ Accordion JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.parentElement;
+                    const content = button.nextElementSibling;
+                    const arrow = button.querySelector('svg');
+                    
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.querySelector('.faq-content').classList.add('hidden');
+                            item.querySelector('svg').classList.remove('rotate-180');
+                            item.querySelector('.faq-button').classList.remove('text-[#5476DB]');
+                            item.classList.remove('bg-[#ECF0FB]');
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    content.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                    button.classList.toggle('text-[#5476DB]');
+                    faqItem.classList.toggle('bg-[#ECF0FB]');
+                });
+            });
+        });
+    </script>
+
+    <!-- Add jQuery and Owl Carousel JS before closing body tag -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+                navText: [
+                    '<i class="fas fa-chevron-left"></i>',
+                    '<i class="fas fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Add AOS.js before closing body tag -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-in-out'
+        });
+    </script>
+
+    <!-- Add search.js before closing body tag -->
+    <script src="assets/js/search.js"></script>
 </body>
 </html>
