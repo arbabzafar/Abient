@@ -201,7 +201,7 @@
 
             <!-- Right Column - Product Info -->
             <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000">
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6" x-data="{ selectedOption1: 0, selectedOption2: 0 }">
                     <h1 class="text-xl font-medium mb-2" x-text="product?.name" data-aos="fade-up" data-aos-delay="200"></h1>
                     
                     <!-- Rating -->
@@ -234,14 +234,22 @@
                     <div class="space-y-3 mb-6">
                         <div>
                             <label class="block text-sm mb-1">Wähle deine Option *</label>
-                            <select class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white">
-                                <option>Wähle eine Option</option>
+                            <select 
+                                class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white"
+                                x-model="selectedOption1"
+                            >
+                                <option value="0">Wähle eine Option</option>
+                                <option value="300">+300 €</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-sm mb-1">Persönliche Nachricht für Kundenbetreuung *</label>
-                            <select class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white">
-                                <option>Wähle eine Option</option>
+                            <select 
+                                class="w-full p-2 border rounded text-sm focus:outline-none focus:border-[#0099FF] bg-white"
+                                x-model="selectedOption2"
+                            >
+                                <option value="0">Wähle eine Option</option>
+                                <option value="300">+300 €</option>
                             </select>
                         </div>
                     </div>
@@ -250,24 +258,24 @@
                     <div class="mb-4">
                         <div class="flex justify-between text-sm mb-1">
                             <span>Produkt Gesamtpreis</span>
-                            <span class="text-[#0099FF]">1.049,00 €</span>
+                            <span class="text-[#0099FF]" x-text="product?.price.toFixed(2) + ' €'"></span>
                         </div>
                         <div class="flex justify-between text-sm mb-1">
                             <span>Optionen Gesamtpreis</span>
-                            <span class="text-[#0099FF]">0,00 €</span>
+                            <span class="text-[#0099FF]" x-text="(Number(selectedOption1) + Number(selectedOption2)).toFixed(2) + ' €'"></span>
                         </div>
                         <div class="flex justify-between text-sm">
                             <span>Gesamtpreis</span>
-                            <span class="text-[#0099FF]">1.049,00 €</span>
+                            <span class="text-[#0099FF]" x-text="(product?.price + Number(selectedOption1) + Number(selectedOption2)).toFixed(2) + ' €'"></span>
                         </div>
                     </div>
 
-                    <!-- Add to Cart Button -->
+                    <!-- Add to Cart Button
                     <div class="mb-4">
                         <button class="w-full bg-[#0099FF] text-white py-2 px-4 rounded text-sm font-medium hover:bg-[#0088ee] transition-colors uppercase">
                             In den Warenkorb
                         </button>
-                    </div>
+                    </div> -->
 
                     <!-- PayPal Section -->
                     <div class="mb-4">
@@ -326,10 +334,10 @@
      <footer class="bg-[#1C1C1C] text-white py-16">
         <div class="max-w-[1200px] mx-auto px-8">
             <!-- Logo -->
-            <div class="flex justify-between items-center ">
+            <div class="flex flex-col md:flex-row justify-between items-center ">
                 <img src="assets/images/SSTuningBannerQuerformat500x500px.svg" alt="S&S Tuning" class="w-48">
                   <!-- Social Media Icons -->
-            <div class="flex justify-end gap-4 mt-12">
+                    <div class="flex justify-end gap-4 my-6 md:mt-12">
                 <a href="#" class="hover:opacity-80 transition-opacity">
                     <img src="assets/images/instagram.png" alt="Instagram" class="w-8 h-8">
                 </a>
@@ -340,7 +348,7 @@
                     <img src="assets/images/sozialen-medien.png" alt="TikTok" class="w-8 h-8">
                 </a>
                     </div>
-                </div>
+            </div>
 
             <!-- Divider -->
             <div class="border-b border-gray-700 mb-12"></div>
